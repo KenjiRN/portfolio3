@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Melissa_OF</title>
+    <link href="contact.html" rel="stylesheet">
+  
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap');
+        /*      font-family: 'Poppins', sans-serif;     */
+
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        header{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            padding: 40px 100px;
+            z-index: 10000;
+            transition: 0.6s;
+        }
+        header .logo{
+            position: relative;
+            font-weight: 700;
+            color: #fff;
+            text-decoration: none;
+            font-size: 2em;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            transition: 0.6s;
+        } 
+        header #toggle{
+            position: relative;
+            width: 30px;
+            height: 30px;
+            cursor: pointer;
+        }
+        header #toggle:before{
+            content:'';
+            position: absolute;
+            top: 7px;
+            width: 100%;
+            height: 2px;
+            background:#fff; 
+        }
+        header #toggle:after{
+            content:'';
+            position: absolute;
+            bottom: 7px;
+            width: 100%;
+            height: 2px;
+            background:#fff; 
+        }
+        .banner.active header #toggle:before{
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(45deg);
+        }
+        .banner.active header #toggle:after{
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(-45deg);
+
+        }
+
+
+        .banner{
+            position: relative;
+            width: 100%;
+            min-height: 100vh;
+            padding: 100px;
+            background: url(fundo-preto-com-foco-de-luz_1017-27230.jpg);
+            background-size: cover;
+            display: flex;
+            align-items: center;
+            transition: 0.5s;
+            z-index: 2;
+        }
+        .banner.active{
+            transform: translate(-400px);
+        }
+        #navigation{
+            position: fixed;
+            top: 0;
+            right: -200px;
+            width: 400px;
+            height: 100vh;
+            background:#40c3ff;
+            z-index: 1;
+            display: grid;
+            place-items: center;
+            transition: 0.5s;
+        }
+        #navigation.active{
+            right: 0;
+            
+        }
+        #navigation ul{
+            position: relative;
+            display: flex;
+            flex-direction: column;
+        }
+        #navigation ul li{
+            list-style: none;
+        }
+        #navigation ul li a{
+            color: #fff;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 2em;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+        .content{
+            max-width: 600px;
+        }
+        .content h2{
+            color: #fff;
+            font-size: 2.5em;
+        }
+        .content h2 span{
+            color: #40c3ff;
+            font-size: 1.2em;
+        }
+        .content p{
+            font-size: 1.2em;
+            color: #fff;
+            font-weight: 300;
+        }
+        .content a{
+            position: relative;
+            display: inline-block;
+            margin-top: 20px;
+            background:#fff;
+            color: #000;
+            padding: 10px 30px;
+            text-decoration: none;
+            font-size: 1.2em;
+            font-weight: 500;
+        }
+        .sci{
+            position: absolute;
+            display: flex;
+            flex-direction: column;
+            right: 100px;
+        }
+        .sci li {
+            list-style: none;
+        }
+        .sci li a{
+            position: relative;
+            display: grid;
+            place-items: center;
+            width: 50px;
+            height: 50px;
+            text-decoration: none;
+            border: 1px solid #fff;
+            margin: 10px 0 0 ;
+        }
+        .sci li a:hover{
+            background: #fff;
+        }
+        .sci li a img{
+            max-width: 20px;
+            filter:invert(1);
+            mix-blend-mode: difference;
+        }
+
+        @media (max-width:767px){
+            header{
+                padding: 20px 50px;
+        }
+            .banner{
+                padding: 100px 50px 150px;
+        }
+            .banner h2 {
+                font-size: 1.8em;
+            }
+            .banner .content p, .banner .content a{
+                font-size: 1em;
+            }
+            .banner.active{
+            transform: translate(-250px);
+        }
+            #navigation{
+                width: 250px;
+            }
+            #navigation ul li a{
+                font-size: 1.5em;
+                margin: 5px 0;
+            }
+            .sci{
+                position: absolute;
+                bottom: 50px;
+                right: initial;
+                flex-direction: row;
+            }
+            .sci li a{
+                margin: initial;
+                margin-right: 10px;
+            }
+            .card{display: none;}
+        }
+
+        /* ---------------------------------------------------------------------------- */
+        .card{
+            position: absolute;
+            top: 50%;
+            left:65%;
+            height: 400px;
+            width: 300px;
+            transform: translate(-50%, -50%);
+            transform-style: preserve-3d;
+            perspective: 600px;
+            transition: 6s;
+        }
+        .card:hover .card-front{
+            transform:rotateX(-180deg)
+        }
+        .card:hover .card-back{
+            transform: rotateX(0deg);
+        }
+        .card-back h2{
+            margin: 40% auto 35% auto;
+            font-size: 25px;
+        }
+        .card-back{
+            font-size: 22px;
+        }
+        .card-front{
+            border-radius: 5px;
+            width: 100%;
+            height: 100%;
+            background-image: url(what2.jpeg);
+            background-position: 50% 50%;
+            background-size: cover;
+            top: 0; left: 0%;
+            position: absolute;
+            background-color: #121212;
+            backface-visibility: hidden;
+            transform: rotateX(0deg);
+            transition: .6s;
+        }
+        .card-back{
+            border-radius: 5px;
+            width: 100%; height: 100%;
+            position: absolute;
+            top: 0; left: 0;
+            background-color: #121212;
+            backface-visibility: hidden;    
+            transform:rotateX(180deg);  
+            transition:.6s; color: #fff;
+            text-align: center; 
+              
+             }
+            
+             .card-back span{
+                 color:#2bb9d8
+             }
+             .card-back a{
+                 width: 25px;
+                 height: 25px;
+                 padding: 3px 3px;
+                 border-radius: 4px;
+                 line-height: 20px;
+                 transition: ease-in-out 0.1s;
+             }
+             .card-back a:hover{
+                 color: #121212;
+                 background-color: #2bb9d8;
+             }
+             
+    </style>
+</head>
+<body>
+    <section class="banner" id="sec">
+        <header>
+            <a href="#" class="logo">Melissa_OFN</a>
+            <div id="toggle" onclick="toggle()"></div>
+        </header>
+
+        <div class="content">
+            <h2 id="home">Hello World,<br> I'm <span>Melissa Oliveira</span></h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic expedita, magnam enim nulla vitae dicta. 
+                Veritatis delectus sapiente fuga vitae aspernatur itaque quod. Rerum, quos. Voluptas tempora odio architecto? 
+                Facere.<br><br>If u like =)</p>
+                
+            <a href="https://web.whatsapp.com/send?phone=5592981230133" target="_blank">Click me</a> 
+            <div class="card">
+                <div class="card-front">
+        
+                </div>
+                <div class="card-back">
+                    
+                    <h2>
+                        “It is our choices, <span class="mell">Melissa</span>, that show what we truly are, far more than our abilities.”<br>
+                        <span>Dumbledore</span>
+                    </h2>
+                 
+                </div>
+            </div>
+        </div>
+        <ul class="sci">
+            <li><a href="https://i.pinimg.com/564x/cd/65/a4/cd65a43c10598b2e5bae6963bcf49e18.jpg"><img src="facebook.png"></a></li>
+            <li><a href="https://www.instagram.com/melissa_ofonseca/"><img src="instagram.png"></a></li>
+            <li><a href="https://www.linkedin.com/in/melissaofonseca/"><img src="linkedin.png"></a></li>
+        </ul>
+    </section>
+    <div id="navigation">
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="https://i.ibb.co/mBSbZ8w/cv.jpg">Portfolio</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </div>
+
+    
+    <script type="text/javascript">
+        function toggle(){
+            var sec = document.getElementById('sec');
+            var nav = document.getElementById('navigation');
+
+
+            sec.classList.toggle('active')
+            nav.classList.toggle('active')
+        }
+    </script>
+</body>
+</html>
