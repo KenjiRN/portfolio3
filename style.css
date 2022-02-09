@@ -1,16 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kenji_RN</title>
-    <link href="contact.html" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-  
-
-    <!-- <style>
-        /* @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap');
         /*      font-family: 'Poppins', sans-serif;     */
 
         *{
@@ -280,63 +268,4 @@
                  color: #121212;
                  background-color: #2bb9d8;
              }
-             
-    </style> */ -->
-</head>
-<body>
-    <section class="banner" id="sec">
-        <header>
-            <a href="#" class="logo">Kenji_RN</a>
-            <div id="toggle" onclick="toggle()"></div>
-        </header>
-
-        <div class="content">
-            <h2 id="home">Hello World,<br> I'm <span>Kenji_RN</span></h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic expedita, magnam enim nulla vitae dicta. 
-                Veritatis delectus sapiente fuga vitae aspernatur itaque quod. Rerum, quos. Voluptas tempora odio architecto? 
-                Facere.<br><br>If u like =)</p>
-                
-            <a href="https://web.whatsapp.com/send?phone=5592981230133" target="_blank">Contact me</a> 
-            <div class="card">
-                <div class="card-front">
-        
-                </div>
-                <div class="card-back">
-                    
-                    <h2>
-                        “It is our choices, <span class="mell">Kenji_RN</span>, all We Have To Do Is Decide What To Do With The Time That Is Given To Us.”<br>
-                        <span>Gandalf</span>
-                    </h2>
-                 
-                </div>
-            </div>
-        </div>
-        <ul class="sci">
-            <li><a href="https://i.pinimg.com/564x/cd/65/a4/cd65a43c10598b2e5bae6963bcf49e18.jpg" target="_blank"><img src="facebook.png"></a></li>
-            <li><a href="https://www.instagram.com/kenjirn/" target="_blank"><img src="instagram.png"></a></li>
-            <li><a href="https://www.linkedin.com/in/kenjinakajima/" target="_blank"><img src="linkedin.png"></a></li>
-        </ul>
-    </section>
-    <div id="navigation">
-        <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Services</a></li>
-            <li><a href="#">Portfolio</a></li>
-            <li><a href="contact.html" target="_blank">Contact</a></li>
-        </ul>
-    </div>
-
-    
-    <script type="text/javascript">
-        function toggle(){
-            var sec = document.getElementById('sec');
-            var nav = document.getElementById('navigation');
-
-
-            sec.classList.toggle('active')
-            nav.classList.toggle('active')
-        }
-    </script>
-</body>
-</html>
+            
